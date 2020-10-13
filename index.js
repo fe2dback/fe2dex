@@ -44,6 +44,9 @@ client.on('message', (message) => {
   if(message.content == '페덱스') {
     return message.reply('왜불러시발');
   }
+  if(message.content == '!help') {
+    return message.reply('기능추가중이다');
+  }
 
 
   if(message.content == 'embed') {
