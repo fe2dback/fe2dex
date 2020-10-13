@@ -35,6 +35,10 @@ client.on('message', (message) => {
   if(message.content == '시원이') {
     return message.reply('만세');
   }
+  if(message.content == 'c1') {
+    return message.reply('a');
+  }
+
 
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
