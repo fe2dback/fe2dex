@@ -41,8 +41,10 @@ client.on('message', (message) => {
   if(message.content == '!탈콥') {
     return message.reply('https://tarkov-market.com/');
   }
-  if(message.content == '페덱스') {
-    return message.reply('왜불러시발');
+  if(message.content == '페덱스게임') {
+    return message.reply('1.https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
+    return message.reply('2');
+    return message.reply('3');
   }
   
 
