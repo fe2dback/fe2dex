@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const token = process.argv.length == 2 ? process.env.token : "";
-const moment = require("moment");
-require("moment-duration-format");
-const momenttz = require('moment-timezone');
-const MessageAdd = require('./db/message_add.js')
 const welcomeChannelName = "안녕하세요";
 const byeChannelName = "안녕히가세요";
 const welcomeChannelComment = "어서오세요.";
@@ -33,48 +29,22 @@ client.on("guildMemberRemove", (member) => {
   byeChannel.send(`<@${deleteUser.id}> ${byeChannelComment}\n`);
 });
 
-client.on("messageUpdate", (message) => {
-  MessageSave(message, true)
-});
-
 client.on('message', (message) => {
-  MessageSave(message)
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '시원이') {
+    return message.reply('만세');
   }
-
-  if(message.content == '!si') {
-    let embed = new Discord.RichEmbed()
-    let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
-    var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
-    embed.setColor('#186de6')
-    embed.setAuthor('server info of 콜라곰 BOT', img)
-    embed.setFooter(`콜라곰 BOT ❤️`)
-    embed.addBlankField()
-    embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
-    embed.addField('running time', `${duration}`, true);
-    embed.addField('user',         `${client.users.size.toLocaleString()}`, true);
-    embed.addField('server',       `${client.guilds.size.toLocaleString()}`, true);
-    // embed.addField('channel',      `${client.channels.size.toLocaleString()}`, true);
-    embed.addField('Discord.js',   `v${Discord.version}`, true);
-    embed.addField('Node',         `${process.version}`, true);
-    
-    let arr = client.guilds.array();
-    let list = '';
-    list = `\`\`\`css\n`;
-    
-    for(let i=0;i<arr.length;i++) {
-      // list += `${arr[i].name} - ${arr[i].id}\n`
-      list += `${arr[i].name}\n`
-    }
-    list += `\`\`\`\n`
-    embed.addField('list:',        `${list}`);
-
-    embed.setTimestamp()
-    message.channel.send(embed);
+  if(message.content == '!옵지') {
+    return message.reply('https://www.op.gg/');
   }
+  if(message.content == '!탈콥') {
+    return message.reply('https://tarkov-market.com/');
+  }
+  if(message.content == '페덱스') {
+    return message.reply('왜불러시발');
+  }
+  
 
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
@@ -98,19 +68,21 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!help', desc: 'help'},
-      {name: 'ping', desc: '현재 핑 상태'},
+      //{name: 'ping', desc: '현재 핑 상태'},
       {name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
       {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
       {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      {name: '!탈콥', desc: '타르코프 게임아이템 시세조회'},
+      {name: '!옵지', desc: 'OP.GG'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setAuthor('Help of Fe2dDeX BOT', helpImg)
       .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
+      .setFooter(`Fe2dDeX BoT`)
       .setTimestamp()
     
     commandList.forEach(x => {
@@ -246,76 +218,6 @@ async function AutoMsgDelete(message, str, delay = 3000) {
   setTimeout(() => {
     msg.delete();
   }, delay);
-}
-
-function getEmbedFields(message, modify=false) {
-  if(message.content == '' && message.embeds.length > 0) {
-    let e = message.embeds[0].fields;
-    let a = [];
-
-    for(let i=0;i<e.length;i++) {
-        a.push(`\`${e[i].name}\` - \`${e[i].value}\`\n`);
-    }
-
-    return a.join('');
-  } else if(modify) {
-    return message.author.lastMessage.content;
-  } else {
-    return message.content;
-  }
-}
-
-function MessageSave(message, modify=false) {
-  imgs = []
-  if (message.attachments.array().length > 0) {
-    message.attachments.array().forEach(x => {
-      imgs.push(x.url+'\n')
-    });
-  }
-
-  username = message.author.username.match(/[\u3131-\uD79D^a-zA-Z^0-9]/ugi)
-  channelName = message.channel.type != 'dm' ? message.channel.name : ''
-  try {
-    username = username.length > 1 ? username.join('') : username
-  } catch (error) {}
-
-  try {
-    channelName = channelName.length > 1 ? channelName.join('') : channelName
-  } catch (error) {}
-
-  var s = {
-    ChannelType: message.channel.type,
-    ChannelId: message.channel.type != 'dm' ? message.channel.id : '',
-    ChannelName: channelName,
-    GuildId: message.channel.type != 'dm' ? message.channel.guild.id : '',
-    GuildName: message.channel.type != 'dm' ? message.channel.guild.name : '',
-    Message: getEmbedFields(message, modify),
-    AuthorId: message.author.id,
-    AuthorUsername: username + '#' + message.author.discriminator,
-    AuthorBot: Number(message.author.bot),
-    Embed: Number(message.embeds.length > 0), // 0이면 false 인거다.
-    CreateTime: momenttz().tz('Asia/Seoul').locale('ko').format('ll dddd LTS')
-  }
-
-  s.Message = (modify ? '[수정됨] ' : '') + imgs.join('') + s.Message
-
-  MessageAdd(
-    s.ChannelType,
-    s.ChannelId,
-    s.ChannelName,
-    s.GuildId,
-    s.GuildName,
-    s.Message,
-    s.AuthorId,
-    s.AuthorUsername,
-    s.AuthorBot,
-    s.Embed,
-    s.CreateTime,
-  )
-    // .then((res) => {
-    //   console.log('db 저장을 했다.', res);
-    // })
-    .catch(error => console.log(error))
 }
 
 
