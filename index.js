@@ -44,9 +44,12 @@ client.on('message', (message) => {
   if(message.content == '페덱스') {
     return message.reply('왜불러시발');
   }
-  if(message.content == '페덱스 항아리 게임') {
-    return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
+  if(message.content == '페덱스 게임리스트') {
+    return message.reply('안녕하세요 \n\ 안녕하세요');
   }
+  /*if(message.content == '페덱') {
+    return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
+  }*/
   
 
   if(message.content == 'embed') {
