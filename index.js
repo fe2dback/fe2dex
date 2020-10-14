@@ -42,9 +42,8 @@ client.on('message', (message) => {
     return message.reply('https://tarkov-market.com/');
   }
   if(message.content == '페덱스게임') {
-    return message.reply('게임리스트');
-    return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
-  }
+    return message.reply('게임리스트 \n https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
+   
   
 
   if(message.content == 'embed') {
