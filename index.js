@@ -78,12 +78,12 @@ client.on('message', (message) => {
       {name: '!옵지', desc: 'OP.GG'},
       {name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
       //{name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
+      //{name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
-      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+      //{name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+      //{name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
       
     ];
     let commandStr = '';
