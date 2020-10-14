@@ -45,7 +45,7 @@ client.on('message', (message) => {
     return message.reply('왜불러시발');
   }
   if(message.content == '페덱스 게임리스트') {
-    return message.reply('안녕하세요 \n\ 안녕하세요');
+    return message.reply('\n\ 1.항아리게임 \n\ https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing \n\ 2.추가중 \n\ \n\ 3.추가중');
   }
   /*if(message.content == '페덱') {
     return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
