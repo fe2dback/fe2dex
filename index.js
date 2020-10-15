@@ -58,7 +58,7 @@ client.on('message', (message) => {
     return message.reply('바위');
   }
   if(message.content == '바위') {
-    return message.reply('가위');
+    return message.reply('보');
   }
   if(message.content == '보') {
     return message.reply('가위');
