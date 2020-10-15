@@ -50,6 +50,20 @@ client.on('message', (message) => {
   /*if(message.content == '페덱') {
     return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
   }*/
+  if(message.content == '가위바위보') {
+    return message.reply('\n\ 가위 \n\ 바위 \n\ 보 \n\ 중에 하나만 입력해주세요');
+  }
+  
+  if(message.content == '가위') {
+    return message.reply('바위');
+  }
+  if(message.content == '바위') {
+    return message.reply('가위');
+  }
+  if(message.content == '보') {
+    return message.reply('가위');
+  }
+  
   
 
   if(message.content == 'embed') {
