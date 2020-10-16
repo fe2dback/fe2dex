@@ -100,17 +100,44 @@ client.on('message', (message) => {
     }
   }
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '시원이') {
+    return message.reply('만세');
+  }
+  if(message.content == '!옵지') {
+    return message.reply('https://www.op.gg/');
+  }
+  if(message.content == '!탈콥') {
+    return message.reply('https://tarkov-market.com/');
+  }
+  if(message.content == '페덱스') {
+    return message.reply('왜불러시발');
+  }
+  if(message.content == '!페덱스 게임리스트') {
+    return message.reply('Fe2dDeX 게임리스트 \n\ ===================== \n\ 1.Getting over it \n\ https://t.ly/7Tut \n\ 2.Golfing over it \n\ https://t.ly/43GE \n\ ==========추가중========');
+  }
+  /*if(message.content == '페덱') {
+    return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
+  }*/
+  if(message.content == '가위바위보') {
+    return message.reply('\n\ 가위 바위 보 \n\ 중에 하나만 입력해주세요');
+  }
+  if(message.content == '가위') {
+    return message.reply('바위');
+  }
+  if(message.content == '바위') {
+    return message.reply('보');
+  }
+  if(message.content == '보') {
+    return message.reply('가위');
   }
 
-  if(message.content == '!si') {
+  if(message.content == '!핑') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     var duration = moment.duration(client.uptime).format(" D [일], H [시간], m [분], s [초]");
     embed.setColor('#186de6')
-    embed.setAuthor('server info of 콜라곰 BOT', img)
-    embed.setFooter(`콜라곰 BOT ❤️`)
+    embed.setAuthor('server info of Fe2dDeX BOT', img)
+    embed.setFooter(`Fe2dDeX`)
     embed.addBlankField()
     embed.addField('RAM usage',    `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`, true);
     embed.addField('running time', `${duration}`, true);
@@ -157,13 +184,16 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!help', desc: 'help'},
-      {name: 'ping', desc: '현재 핑 상태'},
-      {name: 'embed', desc: 'embed 예제1'},
+      {name: '!탈콥', desc: '타르코프 게임아이템 시세조회'},
+      {name: '!옵지', desc: 'OP.GG'},
+      {name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
+      {name: '!핑', desc: '현재 핑 상태'},
+      //{name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
-      {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
+     // {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
       {name: '!청소', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
-      {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
+     // {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
@@ -311,12 +341,13 @@ client.on('message', (message) => {
     let arr = [
       '왜',
       '뭐',
-      '뭠마',
+      '시발왜불러',
+      '왜부르냐니까',
+      '꺼져',
     ]
     let min = 0;
     let max = arr.length;
     let index = parseInt(Math.random() * (max - min) + min);
-    return message.reply(`${arr[index]}가 나왔습니다.`);
   }
 });
 
