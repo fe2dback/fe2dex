@@ -188,6 +188,7 @@ client.on('message', (message) => {
       {name: '!옵지', desc: 'OP.GG'},
       {name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
       {name: '!핑', desc: '현재 핑 상태'},
+      {name: '!주사위', desc: '주사위를 굴립니다'},
       //{name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
      // {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
@@ -332,6 +333,7 @@ client.on('message', (message) => {
     let kick_msg = message.author.username+'#'+message.author.discriminator+'이(가) 강퇴시켰습니다.';
 
     message.member.guild.members.find(x => x.id == userId).ban(kick_msg)
+
   } else if(message.content.startsWith('!주사위')) {
     let min = 1;
     let max = 6;
