@@ -347,7 +347,7 @@ client.on('message', (message) => {
       '왜부르냐니까',
       '꺼져',
     ]
-  } if(message.content.startsWith('!뭐해')) {
+  } else if(message.content.startsWith('!뭐해')) {
     let arr = [
       '몰라',
       '모른다고',
