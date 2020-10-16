@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.argv.length == 2 ? process.env.token : "";
+const token = 'NjE4Nzc0MjkzNDEyNTc3Mjkw.XW-kdw.-iKrzv2PJTE4N_UaNMRVaneH3FA';
 const moment = require("moment");
 require("moment-duration-format");
 const welcomeChannelName = "안녕하세요";
@@ -54,7 +54,6 @@ client.on('message', (message) => {
   }*/
   if(message.content == '가위바위보') {
     return message.reply('\n\ 가위 바위 보 \n\ 중에 하나만 입력해주세요');
-    message.channel.send(embed)
   }
   if(message.content == '가위') {
     return message.reply('바위');
