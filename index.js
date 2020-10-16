@@ -130,7 +130,12 @@ client.on('message', (message) => {
   if(message.content == '보') {
     return message.reply('가위');
   }
-
+  if(message.content == '뭐해') {
+    return message.reply('몰라');
+  }
+  if(message.content == '뭐하냐고') {
+    return message.reply('모른다고 시발롬아^^');
+  }
   if(message.content == '!핑') {
     let embed = new Discord.RichEmbed()
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
@@ -339,23 +344,13 @@ client.on('message', (message) => {
     let max = 6;
     let dice_num = parseInt(Math.random() * (max - min) + min);
     return message.reply(`${dice_num}가 나왔습니다.`);
-  } if(message.content.startsWith('!야')) {
-    let arr1 = [
+  } if(message.content.startsWith('야')) {
+    let arr = [
       '왜',
       '뭐',
       '시발왜불러',
       '왜부르냐니까',
       '꺼져',
-    ]
-  } else if(message.content.startsWith('!뭐해')) {
-    let arr2 = [
-      '몰라',
-      '모른다고',
-    ]
-  } if(message.content.startsWith('!뭐하냐고')) {
-    let arr3 = [
-      '모른다고 시발롬아',
-      '시원이사랑해 하는중',
     ]
     let min = 0;
     let max = arr.length;
