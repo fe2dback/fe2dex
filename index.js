@@ -54,6 +54,7 @@ client.on('message', (message) => {
   }*/
   if(message.content == '가위바위보') {
     return message.reply('\n\ 가위 바위 보 \n\ 중에 하나만 입력해주세요');
+    message.channel.send(embed)
   }
   if(message.content == '가위') {
     return message.reply('바위');
@@ -64,6 +65,7 @@ client.on('message', (message) => {
   if(message.content == '보') {
     return message.reply('가위');
   }
+  
   
 
 
