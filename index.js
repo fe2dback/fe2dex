@@ -340,7 +340,7 @@ client.on('message', (message) => {
     let dice_num = parseInt(Math.random() * (max - min) + min);
     return message.reply(`${dice_num}가 나왔습니다.`);
   } if(message.content.startsWith('!야')) {
-    let arr = [
+    let arr1 = [
       '왜',
       '뭐',
       '시발왜불러',
@@ -348,12 +348,12 @@ client.on('message', (message) => {
       '꺼져',
     ]
   } else if(message.content.startsWith('!뭐해')) {
-    let arr = [
+    let arr2 = [
       '몰라',
       '모른다고',
     ]
   } if(message.content.startsWith('!뭐하냐고')) {
-    let arr = [
+    let arr3 = [
       '모른다고 시발롬아',
       '시원이사랑해 하는중',
     ]
