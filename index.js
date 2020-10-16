@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NjE4Nzc0MjkzNDEyNTc3Mjkw.XW-kdw.RxvZykCH49NSVHAlo1b_tREFFTQ';
+const token = process.env.token;
 const moment = require("moment");
 require("moment-duration-format");
 const welcomeChannelName = "안녕하세요";
