@@ -130,57 +130,7 @@ client.on('message', (message) => {
   if(message.content == '보') {
     return message.reply('가위');
   }
-  if(message.content == '뭐해') {
-    return message.reply('몰라');
-  }
-  if(message.content == '뭐하냐고') {
-    return message.reply('모른다고 시발롬아^^');
-  }
-  if(message.content == '왜 몰라') {
-    return message.reply('몰라');
-  }
-  if(message.content == '나랑 놀아줘') {
-    return message.reply('좆까');
-  }
-  if(message.content == '나랑 놀아달라고') {
-    return message.reply('뭐하고');
-  }
-  if(message.content == '나도몰라') {
-    return message.reply('시원련이');
-  }
-  if(message.content == '현수는어디갔어') {
-    return message.reply('뒤졌어');
-  }
-  if(message.content == '상준이는어디갔어') {
-    return message.reply('뒤졌어');
-  }
-  if(message.content == '시원이는어디갔어') {
-    return message.reply('성혁이집에');
-  }
-  if(message.content == 'AI가 말이 많아') {
-    return message.reply('닥쳐');
-  }
-  if(message.content == '말대답하지마') {
-    return message.reply('좆까');
-  }
-  if(message.content == '박상준집주소알려줘') {
-    return message.reply('나도몰라');
-  }
-  if(message.content == '김현수') {
-    return message.reply('병시인');
-  }
-  if(message.content == '이준렬') {
-    return message.reply('다빈이');
-  }
-  if(message.content == '박상준') {
-    return message.reply('개새끼');
-  }
-  if(message.content == '김무성') {
-    return message.reply('탈모');
-  }
-  if(message.content == '윤성혁') {
-    return message.reply('시원이냄친');
-  }
+
 
 
 
@@ -399,7 +349,7 @@ client.on('message', (message) => {
     let arr = [
       '왜',
       '뭐',
-      '시발왜불러',
+      '왜불러',
       '왜부르냐니까',
       '꺼져',
     ]
