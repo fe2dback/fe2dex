@@ -345,6 +345,13 @@ client.on('message', (message) => {
     let max = 6;
     let dice_num = parseInt(Math.random() * (max - min) + min);
     return message.reply(`${dice_num}가 나왔습니다.`);
+
+  } else if(message.content.startsWith('!더블주사위')) {
+    let min = 1;
+    let max = 12;
+    let dice_num2 = parseInt(Math.random() * (max - min) + min);
+    return message.reply(`${dice_num2}가 나왔습니다.`);
+
   } if(message.content.startsWith('야')) {
     let arr = [
       '왜',
