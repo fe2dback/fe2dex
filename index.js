@@ -101,7 +101,7 @@ client.on('message', (message) => {
   }
 
   if(message.content == '시원이') {
-    return message.reply('만세');
+    return message.reply('이원시');
   }
   if(message.content == '!옵지') {
     return message.reply('https://www.op.gg/');
