@@ -363,8 +363,8 @@ client.on('message', (message) => {
     let min = 0;
     let max = arr.length;
     let index = parseInt(Math.random() * (max - min) + min);
-    return message.reply(`${arr[index]} `);
-  }*/
+    return message.reply(`${arr[index]} `); */
+  }
 });
 
 function checkPermission(message) {
