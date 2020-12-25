@@ -106,9 +106,6 @@ client.on('message', (message) => {
   if(message.content == '!옵지') {
     return message.reply('https://www.op.gg/');
   }
-  if(message.content == '!탈콥') {
-    return message.reply('https://tarkov-market.com/');
-  }
   if(message.content == '페덱스') {
     return message.reply('왜불러시발');
   }
