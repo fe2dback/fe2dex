@@ -190,7 +190,6 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: '!help', desc: 'help'},
-      {name: '!탈콥', desc: '타르코프 게임아이템 시세조회'},
       {name: '!옵지', desc: 'OP.GG'},
       {name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
       {name: '!핑', desc: '현재 핑 상태'},
