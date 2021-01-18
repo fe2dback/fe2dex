@@ -201,7 +201,7 @@ client.on('message', (message) => {
       //{name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
      // {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
-      {name: '!청소', desc: '텍스트 지움'},
+      {name: '!clear', desc: '텍스트 지움'},
       {name: '!초대코드', desc: '해당 채널의 초대 코드 표기'},
      // {name: '!초대코드2', desc: '봇이 들어가있는 모든 채널의 초대 코드 표기'},
     ];
@@ -278,14 +278,14 @@ client.on('message', (message) => {
     } else {
       return message.reply('채널에서 실행해주세요.');
     }
-  } else if(message.content.startsWith('!청소')) {
+  } else if(message.content.startsWith('!clear')) {
     if(message.channel.type == 'dm') {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
   
   if(message.channel.type != 'dm' && checkPermission(message)) return
 
-    var clearLine = message.content.slice('!청소 '.length);
+    var clearLine = message.content.slice('!clear '.length);
     var isNum = !isNaN(clearLine)
 
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
@@ -355,18 +355,14 @@ client.on('message', (message) => {
     let dice_num2 = parseInt(Math.random() * (max - min) + min);
     return message.reply(`${dice_num2}가 나왔습니다.`);
 
-  /* } if(message.content.startsWith('야')) {
+   } if(message.content.startsWith('*')) {
     let arr = [
       '왜',
-      '뭐',
-      '왜불러',
-      '왜부르냐니까',
-      '꺼져',
     ]
     let min = 0;
     let max = arr.length;
     let index = parseInt(Math.random() * (max - min) + min);
-    return message.reply(`${arr[index]} `); */
+    return message.reply(`${arr[index]} `); 
   }
 });
 
