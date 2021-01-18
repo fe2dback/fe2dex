@@ -127,7 +127,10 @@ client.on('message', (message) => {
   if(message.content == '보') {
     return message.reply('가위');
   }
-
+   if(message.content == '전적검색') {
+    return message.reply('@소나 "user name" 전적 검색해줘 ');
+  }
+ 
 
 
 
