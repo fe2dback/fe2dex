@@ -128,10 +128,10 @@ client.on('message', (message) => {
     return message.reply('가위');
   }
    if(message.content == '전적검색') {
-    return message.reply('@소나 "user name" 전적 검색해줘 ');
+    return message.reply('소나 "user name" 전적 검색해줘 ');
   }
      if(message.content == '소나봇사용법') {
-    return message.reply('\n 전적검색\n @소나 로테이션\n @소나 패치노트');
+    return message.reply('\n 전적검색\n 소나 로테이션\n 소나 패치노트');
   }
  
 
