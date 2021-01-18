@@ -131,7 +131,7 @@ client.on('message', (message) => {
     return message.reply('@소나 "user name" 전적 검색해줘 ');
   }
      if(message.content == '소나봇사용법') {
-    return message.reply('@소나\n 로테이션\n 패치노트');
+    return message.reply('\n 전적검색\n @소나 로테이션\n @소나 패치노트');
   }
  
 
@@ -197,7 +197,7 @@ client.on('message', (message) => {
       {name: '!핑', desc: '현재 핑 상태'},
       {name: '!주사위', desc: '주사위를 굴립니다'},
       {name: '소나봇사용법', desc: '소나봇사용법'},
-      {name: '롤 전적검색', desc: '전적검색'},
+   
       //{name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
      // {name: '!전체공지2', desc: 'dm으로 전체 embed 형식으로 공지 보내기'},
