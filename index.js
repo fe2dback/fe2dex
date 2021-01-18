@@ -282,8 +282,8 @@ client.on('message', (message) => {
     if(message.channel.type == 'dm') {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
-    
-    if(message.channel.type != 'dm' && checkPermission(message)) return
+  
+  if(message.channel.type != 'dm' && checkPermission(message)) return
 
     var clearLine = message.content.slice('!청소 '.length);
     var isNum = !isNaN(clearLine)
