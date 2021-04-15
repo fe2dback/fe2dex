@@ -78,7 +78,7 @@ client.on('message', (message) => {
     // let msg = message.content;
     // embed.setColor('#186de6')
     // embed.setAuthor(user+'이(가) 메세지를 보냈습니다.', img)
-    // embed.setFooter(`콜라곰 BOT ❤️`)
+    // embed.setFooter(`Fe2dex`)
     // embed.addField('메세지 내용', msg, true);
     // embed.setTimestamp()
     // client.users.find(x => x.id == adminUserId).send(embed);
@@ -100,18 +100,10 @@ client.on('message', (message) => {
     }
   }
 
-  if(message.content == '!옵지') {
-    return message.reply('https://www.op.gg/');
-  }
-  if(message.content == '페덱스') {
-    return message.reply('왜불러시발');
-  }
   if(message.content == '!페덱스 게임리스트') {
     return message.reply('Fe2dDeX 게임리스트 \n\ ===================== \n\ 1.Getting over it \n\ https://t.ly/7Tut \n\ 2.Golfing over it \n\ https://t.ly/43GE \n\ ==========추가중========');
   }
-  /*if(message.content == '페덱') {
-    return message.reply('https://drive.google.com/file/d/1CFhcfdCc-B55Zq2Uh6Ebt63yptTZDcYL/view?usp=sharing');
-  }*/
+  
   if(message.content == '가위바위보') {
     return message.reply('\n\ 가위 바위 보 \n\ 중에 하나만 입력해주세요');
   }
@@ -124,12 +116,7 @@ client.on('message', (message) => {
   if(message.content == '보') {
     return message.reply('가위');
   }
-   if(message.content == '전적검색') {
-    return message.reply('소나 "user name" 전적 검색해줘 ');
-  }
-     if(message.content == '소나봇사용법') {
-    return message.reply('\n 전적검색\n 소나 로테이션\n 소나 패치노트');
-  }
+
  
 
 
@@ -173,7 +160,7 @@ client.on('message', (message) => {
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
       .setURL('http://www.naver.com')
-      .setAuthor('나긋해', img, 'http://www.naver.com')
+      .setAuthor('fe2dback', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
       .addField('Inline field title', 'Some value here')
@@ -183,17 +170,17 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+      .setFooter('fe2dback(이)가 만듬', img)
 
     message.channel.send(embed)
   } else if(message.content == '!help') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
-      {name: '!옵지', desc: 'OP.GG'},
+      //{name: '!옵지', desc: 'OP.GG'},
       {name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
       {name: '!핑', desc: '현재 핑 상태'},
       {name: '!주사위', desc: '주사위를 굴립니다'},
-      {name: '소나봇사용법', desc: '소나봇사용법'},
+      //{name: '소나봇사용법', desc: '소나봇사용법'},
    
       //{name: 'embed', desc: 'embed 예제1'},
       {name: '!전체공지', desc: 'dm으로 전체 공지 보내기'},
@@ -246,9 +233,9 @@ client.on('message', (message) => {
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지2'.length);
       let embed = new Discord.RichEmbed()
-        .setAuthor('공지 of 콜라곰 BOT')
+        .setAuthor('공지 of fe2dex BOT')
         .setColor('#186de6')
-        .setFooter(`콜라곰 BOT ❤️`)
+        .setFooter('fe2dex bot ❤️`)
         .setTimestamp()
   
       embed.addField('공지: ', contents);
