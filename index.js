@@ -267,12 +267,12 @@ client.on('message', (message) => {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
   
-    
+
     if(message.channel.type != 'dm' && checkPermission(message)) return
 
     var clearLine = message.content.slice('!청소'.length);
     var isNum = !isNaN(clearLine)
-
+    if(message.content == '!청소'){
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
       message.channel.send("1부터 100까지의 숫자만 입력해주세요.")
       return;
@@ -301,6 +301,7 @@ client.on('message', (message) => {
         })
         .catch(console.error)
     }
+
   } else if(message.content.startsWith('!강퇴')) {
     if(message.channel.type == 'dm') {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
