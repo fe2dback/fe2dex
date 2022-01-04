@@ -177,7 +177,7 @@ client.on('message', (message) => {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       //{name: '!옵지', desc: 'OP.GG'},
-      {name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
+      //{name: '!페덱스 게임리스트', desc: '게임리스트 표시'},
       {name: '!핑', desc: '현재 핑 상태'},
       {name: '!주사위', desc: '주사위를 굴립니다'},
       //{name: '소나봇사용법', desc: '소나봇사용법'},
@@ -262,7 +262,7 @@ client.on('message', (message) => {
     } else {
       return message.reply('채널에서 실행해주세요.');
     }
-  } else if(message.content.startsWith('!clear')) {
+  } else if(message.content.startsWith('!청소')) {
     if(message.channel.type == 'dm') {
       return message.reply('dm에서 사용할 수 없는 명령어 입니다.');
     }
