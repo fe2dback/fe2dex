@@ -235,7 +235,7 @@ client.on('message', (message) => {
       let embed = new Discord.RichEmbed()
         .setAuthor('공지 of fe2dex BOT')
         .setColor('#186de6')
-        .setFooter('fe2dex bot ❤️`)
+        .setFooter('fe2dex bot ❤️')
         .setTimestamp()
   
       embed.addField('공지: ', contents);
